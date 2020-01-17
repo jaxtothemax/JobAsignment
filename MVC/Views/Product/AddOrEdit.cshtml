@@ -1,0 +1,52 @@
+﻿@model MVC.Models.mvcProductModel
+@{
+    ViewBag.Title = "Add or Edit Product";
+}
+
+    <link rel="stylesheet" type="text/css" href="C:\Users\Jax\source\repos\WebAPIInMVC\MVC\Content\Site.css">
+
+<h2>Add or edit product</h2>
+
+<div class="form-body">
+        @using (Html.BeginForm())
+        {
+
+            @Html.HiddenFor(model => model.ProductID)
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Name)
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(Model => Model.Name)
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Price)
+                @Html.EditorFor(model => model.Price)
+                @Html.ValidationMessageFor(Model => Model.Price)
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Stock)
+                @Html.EditorFor(model => model.Stock)
+                @Html.ValidationMessageFor(Model => Model.Stock)
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Code)
+                @Html.EditorFor(model => model.Code)
+                @Html.ValidationMessageFor(Model => Model.Code)
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn button" />
+                <input type="reset" value="Reset" class="btn button" />
+            </div>
+        }
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval");
+    }
